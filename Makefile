@@ -1,10 +1,11 @@
+PREFIX ?= $(HOME)/.local
+COMPLETION ?= $(HOME)/.local/share/bash-completion/completions
 
-PREFIX?=/usr/local
-ifeq ($(shell uname), Linux)
-COMPLETION=/etc/bash_completion.d
-else
-COMPLETION=$(PREFIX)/etc/bash_completion.d
-endif
+#ifeq ($(shell uname), Linux)
+#COMPLETION=/etc/bash_completion.d
+#else
+#COMPLETION=$(PREFIX)/etc/bash_completion.d
+#endif
 
 install:
 	mkdir -p $(PREFIX)/share/mad $(PREFIX)/etc $(PREFIX)/bin $(COMPLETION)
