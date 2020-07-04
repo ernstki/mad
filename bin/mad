@@ -12,13 +12,20 @@ MAD_ROOT=$(dirname "$BINPATH")
 CONFIG=${MAD_ROOT}/../etc/mad.conf
 MAD_CONFIG=${MAD_CONFIG:-$CONFIG}
 
+# default search path for 'mad' documents
+MAD_PATHS=(
+    "$HOME/.local/share/mad"
+    /usr/local/share/mad
+    /usr/share/mad
+)
+
 #
 # List all <pages>
 #
 
 list_pages() {
   IFS=":"
-  local paths="$MAD_PATH:/usr/local/share/mad:/usr/share/mad"
+  local paths="${MAD_PATH:+$MAD_PATH:}${MAD_PATHS[*]}"
 
   echo
   printf "  \033[1mmad pages:\033[0m\n"
