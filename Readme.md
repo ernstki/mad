@@ -61,7 +61,7 @@
 
   For example:
   
-    MAD_PATH="$HOME/mad:/usr/share/mad:share/mad"
+    MAD_PATH="$HOME/mad"
 
   The following paths will **always** be searched, after any
   __MAD_PATH__ defined in the environment:
@@ -94,3 +94,7 @@ em: 4m
   Jade manual:
 
   ![jade manual markdown](http://f.cl.ly/items/3g1v2W213S2N390B201q/Screen%20Shot%202012-04-14%20at%201.54.35%20PM.png)
+
+## Author
+
+  TJ Holowaychuk <https://github.com/tj>

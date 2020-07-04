@@ -28,6 +28,14 @@
 
     $ make uninstall
 
+  Install/update `mad-pages`, a distribution of useful mad
+  pages:
+
+    $ mad --update
+
+  These will, by default, be installed to the directory
+  `$HOME/.local/share/mad`.
+
 ## Page lookup
 
   Use the __MAD_PATH__ environment variable to control
@@ -36,11 +44,39 @@
 
   For example:
   
-    MAD_PATH="/usr/share/mad:share/mad"
+    MAD_PATH="$HOME/mad"
 
-  The following paths will always be searched:
+  The following paths will **always** be searched, after any
+  __MAD_PATH__ defined in the environment:
   
      - .
+     - $HOME/.local/share/mad
      - /usr/local/share/mad
      - /usr/share/mad
+
+## Configuration
+
+  For its formatting rules, `mad(1)` installs and sources
+  `../etc/mad.conf` relative to `mad`'s installation
+  location (_e.g._, `$HOME/.local/etc/mad.conf`)
+
+  You may edit this file directly, or if you're scared of
+  overwriting it when updating `mad(1)` you can copy this
+  file to something like `~/.mad.conf` and `export
+  MAD_CONFIG=~/.mad.conf`.
+
+```
+heading: 1m
+code: 90m
+strong: 1m
+em: 4m
+```
+
+## Source code
+
+  <https://github.com/ernstki/mad>
+
+## Author
+
+  [TJ Holowaychuk](https://github.com/tj)
 
