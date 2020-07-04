@@ -2,7 +2,7 @@
 
 VERSION="0.4.1"
 REMOTE=git://github.com/visionmedia/mad-pages.git
-REMOTE_MAD=git://github.com/visionmedia/mad.git
+REMOTE_MAD=git://github.com/ernstki/mad.git
 
 BINPATH=$0
 if [ -h "$BINPATH" ]; then
@@ -103,6 +103,7 @@ display_file() {
       s|_(.+?)_|\e[$em\1\e[0m|g; \
       s|    (.+)|    \e[$code\1\e[0m|g; \
       s|\[(.+)\]\((.+)\)|\e[$em\e[$link\1\e[0m \e[$url(\2)\e[0m|g; \
+      s|<(.+)>|\e[$em\e[$link\1\e[0m|g; \
       s|<(.+?)>||g; \
       s|^|  |;" \
     | less -R
